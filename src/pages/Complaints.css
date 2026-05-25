@@ -1,0 +1,394 @@
+:root {
+    --blue: #2aa0ff;
+    --bg-panel: rgba(255, 255, 255, 0.03);
+    --muted: #9ea6b0;
+    --danger-bg: rgba(173, 41, 41, 0.12);
+    --danger-border: rgba(173, 41, 41, 0.28);
+}
+
+.complaints-page {
+    padding: 18px 28px;
+    color: #e6e9ee
+}
+
+.complaints-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px
+}
+
+.title {
+    font-size: 28px;
+    margin: 0
+}
+
+.title.primary {
+    color: var(--blue)
+}
+
+.alert {
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.alert.error {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: #f4c2c2
+}
+
+.alert .icon {
+    font-size: 18px
+}
+
+.alert .msg {
+    font-weight: 500
+}
+
+.complaints-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+.complaint-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(22, 34, 40, 0.04);
+    color: #111111;
+}
+
+.complaint-card .complaint-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.complaint-priority {
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #111111;
+}
+
+.complaint-card.high .complaint-priority {
+    background: #ffd6d6;
+    color: #7a1f1f
+}
+
+.complaint-card.medium .complaint-priority {
+    background: #fff3d6;
+    color: #6b4a05
+}
+
+.complaint-card.low .complaint-priority {
+    background: #eaffea;
+    color: #1f6f34
+}
+
+.complaint-meta {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6)
+}
+
+.complaint-body {
+    margin: 6px 0 8px;
+    color: #0b0b0b;
+    line-height: 1.35
+}
+
+.complaint-footer {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.7)
+}
+
+.complaint-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-outline.small,
+.btn-primary.small {
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.complaint-history {
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 8px;
+}
+
+.history-entry {
+    margin-bottom: 8px;
+}
+
+.history-meta {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6)
+}
+
+.history-note {
+    margin-top: 4px;
+    color: #111
+}
+
+.history-status {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 4px
+}
+
+/* Chat / messaging styles */
+.chat-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-panel {
+    background: #fff;
+    border: 1px solid #000;
+    /* stronger black border for message panels */
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(22, 34, 40, 0.04);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px
+}
+
+.chat-meta {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700
+}
+
+.chat-conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 520px;
+    overflow: auto;
+    padding: 6px 2px
+}
+
+/* Parent message boxed layout for admin view */
+.parent-message-box {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(22, 34, 40, 0.04);
+    margin-bottom: 8px;
+}
+
+.parent-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.parent-content {
+    flex: 1
+}
+
+.parent-meta {
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px
+}
+
+.parent-text {
+    color: #111;
+    line-height: 1.4
+}
+
+.chat-bubble {
+    max-width: 72%;
+    padding: 10px 12px;
+    border-radius: 14px;
+    line-height: 1.3;
+    box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+}
+
+.bubble-left {
+    align-self: flex-start;
+    background: #f3f4f6;
+    color: #111;
+    border-bottom-left-radius: 4px
+}
+
+.bubble-right {
+    align-self: flex-end;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4);
+    color: #fff;
+    border-bottom-right-radius: 4px
+}
+
+.chat-bubble .bubble-meta {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-bottom: 6px
+}
+
+.chat-reply {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px
+}
+
+.chat-reply textarea {
+    flex: 1;
+    min-height: 44px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    padding: 8px
+}
+
+.chat-reply .btn {
+    height: 44px;
+    align-self: flex-end
+}
+
+@media (max-width:800px) {
+    .chat-bubble {
+        max-width: 86%
+    }
+}
+
+/* Empty field placeholder with black border */
+.empty-placeholder {
+    display: inline-block;
+    padding: 6px 8px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background: #fff;
+    color: #000;
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* Black bordered input style for form fields that need emphasis */
+.black-bordered-input {
+    border: 1px solid #000 !important;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 8px 10px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.black-bordered-input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Message form spacing and full-width inputs inside message cards */
+.message-card .message-form label {
+    display: block;
+    margin-bottom: 14px;
+    color: #111;
+}
+
+.message-card .message-form label input,
+.message-card .message-form label textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.message-card .message-form label input {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.message-card .message-form label textarea {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+.empty-list {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.empty-inner {
+    text-align: center;
+    color: var(--muted)
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    opacity: 0.7
+}
+
+.empty-title {
+    font-size: 20px;
+    color: #dfe6ee;
+    margin-bottom: 8px
+}
+
+.empty-sub {
+    max-width: 560px;
+    margin: 0 auto
+}
+
+@media (max-width:800px) {
+    .complaints-page {
+        padding: 12px
+    }
+
+    .title {
+        font-size: 22px
+    }
+}
+
+/* Wider layout for admin messages list to give more horizontal space */
+.admin-messages-wide {
+    display: block !important;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: calc(100% - 60px);
+}
+
+.admin-messages-wide .complaint-card {
+    margin-bottom: 14px;
+}
+
+@media (max-width:900px) {
+    .admin-messages-wide {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 8px;
+    }
+}

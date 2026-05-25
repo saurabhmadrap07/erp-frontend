@@ -1,0 +1,281 @@
+/* Finance page styles - dark themed to match admin layout, with clear tabbed UI */
+.finance-page {
+    padding: 10px 20px;
+}
+
+/* Finance page styles - dark themed to match admin layout, with clear tabbed UI */
+.finance-page {
+    padding: 10px 20px;
+}
+
+.finance-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px
+}
+
+.finance-tabs button {
+    background: transparent;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 24px;
+    color: var(--sidebar-item-color);
+    cursor: pointer;
+    font-weight: 700
+}
+
+.finance-tabs button.active {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.3)
+}
+
+.finance-content .card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
+    color: var(--sidebar-item-color)
+}
+
+.finance-content .card h2 {
+    margin: 0 0 12px 0;
+    color: #fff
+}
+
+.row {
+    margin-bottom: 12px
+}
+
+.row.two {
+    display: flex;
+    gap: 12px
+}
+
+.row label {
+    display: block;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85)
+}
+
+.row input,
+.row select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff
+}
+
+.fee-list {
+    margin-top: 12px
+}
+
+.fee-item {
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 8px
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.payment-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.payment-form input,
+.payment-form select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff
+}
+
+.payment-form .btn {
+    padding: 8px 12px
+}
+
+.payments-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px
+}
+
+.payments-table th,
+.payments-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.85)
+}
+
+.payments-table .empty {
+    text-align: center
+}
+
+.receipts .receipt-item {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.9)
+}
+
+.receipt-item .small {
+    opacity: 0.8;
+    font-size: 12px
+}
+
+.btn {
+    background: #0b1220;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer
+}
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #fff
+}
+
+@media (max-width:900px) {
+    .row.two {
+        flex-direction: column
+    }
+
+    .academics-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.finance-page.colorful {
+    background: linear-gradient(180deg, #fff7fb 0%, #f3f9ff 50%, #fffef2 100%);
+    padding: 18px;
+    border-radius: 12px
+}
+
+.finance-tabs button {
+    background: transparent;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 24px;
+    color: #0b1220;
+    cursor: pointer;
+    font-weight: 700
+}
+
+.finance-tabs button.active {
+    background: linear-gradient(90deg, #60a5fa, #7c3aed);
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.16)
+}
+
+.finance-content .card {
+    background: linear-gradient(180deg, #ffffff, #f6fbff);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    color: #0b1220
+}
+
+.finance-content .card h2 {
+    margin: 0 0 12px 0;
+    color: #0b1220
+}
+
+/* Vertical form layout for fee structure */
+.vertical-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.vertical-form label {
+    display: block;
+    font-weight: 700;
+    color: #0b1220;
+}
+
+.vertical-form input,
+.vertical-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    background: #fff;
+    color: #0b1220;
+}
+
+.row label {
+    display: block;
+    font-weight: 700;
+    color: #0b1220
+}
+
+.row input,
+.row select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    background: #fff;
+    color: #0b1220
+}
+
+.fee-item {
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 8px;
+    color: #0b1220
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    color: rgba(11, 18, 32, 0.6);
+}
+
+.payment-form input,
+.payment-form select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    background: #fff;
+    color: #0b1220
+}
+
+.payments-table th,
+.payments-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(11, 18, 32, 0.04);
+    color: #0b1220
+}
+
+.receipts .receipt-item {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #fff;
+    color: #0b1220
+}
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    color: #0b1220
+}

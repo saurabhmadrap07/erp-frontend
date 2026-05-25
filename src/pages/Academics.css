@@ -1,0 +1,786 @@
+/* Styles for Academic Management page */
+.academics-page {
+    padding: 6px 22px 28px 22px;
+}
+
+.academics-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.academics-title h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #0b1220;
+}
+
+.academics-title .subtitle {
+    margin: 6px 0 0;
+    color: rgba(11, 18, 32, 0.65);
+    font-size: 13px;
+}
+
+.academics-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #0b1220;
+}
+
+.academics-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.academics-controls select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    background: #ffffff;
+    font-weight: 700;
+}
+
+.academics-actions {
+    display: flex;
+    gap: 8px
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #0b1220;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 30px rgba(11, 18, 32, 0.06);
+}
+
+.btn.primary {
+    background: #0ea5a4
+}
+
+.btn.tertiary {
+    background: rgba(11, 18, 32, 0.06);
+    color: #0b1220;
+    font-weight: 700
+}
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    color: #0b1220
+}
+
+.academics-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px 340px;
+    gap: 18px;
+    align-items: start;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 12px 36px rgba(11, 18, 32, 0.06);
+    color: #0b1220;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card.large {
+    grid-column: 1 / span 2;
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+}
+
+.card .muted {
+    color: rgba(11, 18, 32, 0.6);
+    margin: 6px 0 12px
+}
+
+.card-row {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.stat {
+    background: rgba(14, 165, 164, 0.06);
+    padding: 12px 14px;
+    border-radius: 10px;
+    min-width: 88px;
+    text-align: center;
+}
+
+.stat-num {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: rgba(11, 18, 32, 0.7);
+    margin-top: 6px
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.overview-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.overview-actions {
+    display: flex;
+    gap: 8px
+}
+
+.metrics-row .stat {
+    min-width: 120px
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+.class-block {
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 8px 24px rgba(11, 18, 32, 0.04);
+    color: #0b1220;
+}
+
+.class-block .class-label {
+    font-weight: 800;
+    margin-bottom: 6px
+}
+
+.class-block .class-values .small {
+    font-size: 12px;
+    color: rgba(11, 18, 32, 0.7);
+    margin: 2px 0
+}
+
+/* Colorful variants for visual interest */
+.class-block.cls-1 {
+    background: linear-gradient(135deg, #fff7ed, #fff1f2)
+}
+
+.class-block.cls-2 {
+    background: linear-gradient(135deg, #eef2ff, #f0f9ff)
+}
+
+.class-block.cls-3 {
+    background: linear-gradient(135deg, #fef3c7, #fff7ed)
+}
+
+.class-block.cls-4 {
+    background: linear-gradient(135deg, #f0fdf4, #ecfeff)
+}
+
+.class-block.cls-5 {
+    background: linear-gradient(135deg, #fdf2f8, #fff0f6)
+}
+
+.class-block.cls-6 {
+    background: linear-gradient(135deg, #f0f9ff, #eef2ff)
+}
+
+.class-block.cls-7 {
+    background: linear-gradient(135deg, #fff7ed, #fffbe6)
+}
+
+.class-block.cls-8 {
+    background: linear-gradient(135deg, #f5f3ff, #eef2ff)
+}
+
+.class-block.cls-9 {
+    background: linear-gradient(135deg, #fff1f2, #fff7f3)
+}
+
+.class-block.cls-10 {
+    background: linear-gradient(135deg, #ecfeff, #f0f9ff)
+}
+
+.class-block.cls-11 {
+    background: linear-gradient(135deg, #fff7ed, #fff1f2)
+}
+
+.class-block.cls-12 {
+    background: linear-gradient(135deg, #fefce8, #fff7ed)
+}
+
+.btn.tertiary {
+    background: rgba(11, 18, 32, 0.06);
+    color: #0b1220;
+    font-weight: 700
+}
+
+.card[data-variant="syllabus"] {
+    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    color: #fff
+}
+
+.card[data-variant="timetable"] {
+    background: linear-gradient(90deg, #34d399, #f97316);
+    color: #fff
+}
+
+.academics-title {
+    max-width: 60%
+}
+
+.academics-controls {
+    min-width: 360px;
+    display: flex;
+    align-items: center
+}
+
+@media (max-width: 1100px) {
+    .academics-grid {
+        grid-template-columns: 1fr
+    }
+
+    .academics-title {
+        max-width: 100%
+    }
+
+    .academics-controls {
+        width: 100%
+    }
+}
+
+@media (max-width: 1000px) {
+    .academics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card.large {
+        grid-column: auto
+    }
+}
+
+/* Colorful theme tweaks and controls */
+.academics-page.colorful .card {
+    background: linear-gradient(180deg, #ffffff, #f6fbff);
+}
+
+/* Page-level colorful background (subtle) */
+.academics-page.colorful {
+    background: linear-gradient(180deg, #f0f9ff 0%, #fff7fe 50%, #fffbe6 100%);
+    padding: 18px 28px 36px 28px;
+    border-radius: 14px;
+}
+
+.select-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.select-wrap .label-small {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 6px
+}
+
+.select-wrap select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    font-weight: 700
+}
+
+.btn.blue {
+    background: #2563eb
+}
+
+.btn.purple {
+    background: #7c3aed
+}
+
+.btn.green {
+    background: #10b981
+}
+
+.btn.gradient {
+    background: linear-gradient(90deg, #ff6b6b 0%, #f59e0b 50%, #10b981 100%);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.18);
+}
+
+.btn:hover,
+.card:hover {
+    transform: translateY(-4px);
+    transition: transform .18s ease;
+}
+
+/* Colorful card styles */
+.card.large {
+    grid-column: 1 / span 2;
+    background: linear-gradient(135deg, #60a5fa 0%, #7c3aed 100%);
+    color: #fff;
+    box-shadow: 0 18px 50px rgba(124, 58, 237, 0.2);
+}
+
+.card.large .muted {
+    color: rgba(255, 255, 255, 0.85)
+}
+
+.card.large .stat {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff
+}
+
+.card.large .stat-num {
+    color: #fff
+}
+
+.card[data-variant="syllabus"] {
+    background: linear-gradient(90deg, #a78bfa 0%, #60a5fa 100%);
+    color: #fff
+}
+
+.card[data-variant="timetable"] {
+    background: linear-gradient(90deg, #34d399 0%, #f97316 100%);
+    color: #fff
+}
+
+.card[data-variant="resources"] {
+    background: linear-gradient(90deg, #f472b6 0%, #fb923c 100%);
+    color: #fff
+}
+
+.result-item input[type=file] {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff
+}
+
+/* Make selects and controls a little larger and colorful */
+.academics-controls select {
+    min-width: 140px
+}
+
+.academics-controls .select-wrap select {
+    min-width: 140px
+}
+
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    color: #0b1220
+}
+
+.timetable-wrap {
+    overflow: auto
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.timetable th,
+.timetable td {
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    padding: 8px
+}
+
+.timetable input {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(11, 18, 32, 0.06)
+}
+
+.day {
+    font-weight: 700;
+    background: rgba(11, 18, 32, 0.03)
+}
+
+/* Force card text to black on the Academics page for improved readability */
+.academics-page .card,
+.academics-page .card h3,
+.academics-page .card .muted,
+.academics-page .card .stat-label,
+.academics-page .card .stat-num {
+    color: #0b1220 !important;
+}
+
+/* Ensure input/file labels inside colorful cards are readable */
+.academics-page .card input,
+.academics-page .card label,
+.academics-page .card p {
+    color: inherit !important;
+}
+
+/* Syllabus page specific styles */
+.syllabus-page .upload-card {
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 10px 30px rgba(11, 18, 32, 0.04);
+}
+
+.syllabus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.syllabus-block {
+    background: #fff;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 88px;
+    color: #0b1220;
+}
+
+.syllabus-block .sb-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.syllabus-block .sb-class {
+    font-weight: 800
+}
+
+.syllabus-block .sb-status.ok {
+    color: #065f46;
+    font-weight: 700
+}
+
+.syllabus-block .sb-status.missing {
+    color: #7f1d1d;
+    font-weight: 700
+}
+
+.syllabus-block .sb-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px
+}
+
+.syllabus-page .boxed-input {
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    padding: 6px 8px;
+    border-radius: 6px
+}
+
+@media (max-width: 1000px) {
+    .syllabus-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width: 520px) {
+    .syllabus-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Resource form improvements for faculty panel */
+.faculty-page .resource-form {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faculty-page .resource-form .form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.faculty-page .resource-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 700;
+    color: #0b1220;
+}
+
+.faculty-page .resource-form input[type="text"],
+.faculty-page .resource-form input[type="file"],
+.faculty-page .resource-form select,
+.faculty-page .resource-form input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.12);
+    background: #fff;
+}
+
+.faculty-page .resource-form input::placeholder {
+    color: rgba(11, 18, 32, 0.45);
+}
+
+/* Student resources list */
+.student-page .resources-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.student-page .resource-item {
+    background: #fff;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+
+.student-page .resource-item .meta {
+    color: rgba(11, 18, 32, 0.6);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* PDF viewer modal for student resources */
+.pdf-viewer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: 20px;
+}
+
+.pdf-viewer {
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-viewer .pv-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+    border-bottom: 1px solid rgba(11, 18, 32, 0.06);
+}
+
+.pdf-viewer .btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #0b1220;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Library / Resources - Student */
+.resources-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.resources-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #0b1220;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Scrollable uploads history for faculty library */
+.faculty-page .uploads-wrap {
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 8px;
+    /* space for scrollbar */
+}
+
+.faculty-page .uploads-wrap::-webkit-scrollbar {
+    width: 10px;
+}
+
+.faculty-page .uploads-wrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.faculty-page .uploads-wrap::-webkit-scrollbar-thumb {
+    background: rgba(11, 18, 32, 0.12);
+    border-radius: 6px;
+}
+
+.faculty-page .uploads-wrap {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(11, 18, 32, 0.12) transparent;
+}
+
+@media (max-width: 900px) {
+    .faculty-page .uploads-wrap {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 520px) {
+    .faculty-page .uploads-wrap {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+    }
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #334155;
+}
+
+.filter-item select,
+.filter-item input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    min-width: 160px;
+    background: #fff;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.resource-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 30px rgba(11, 18, 32, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .14s ease, box-shadow .14s ease;
+    border: 1px solid rgba(11, 18, 32, 0.04);
+}
+
+.resource-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(11, 18, 32, 0.12);
+}
+
+.resource-card .rc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.resource-card .title {
+    font-weight: 800;
+    font-size: 15px;
+    color: #0b1220;
+}
+
+.resource-card .meta {
+    color: rgba(11, 18, 32, 0.6);
+    font-size: 13px;
+}
+
+.resource-card .rc-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.resource-card .uploaded {
+    color: rgba(11, 18, 32, 0.5);
+    font-size: 12px;
+}
+
+.resource-card .actions {
+    display: flex;
+    gap: 8px;
+}
+
+.resource-card .btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.resource-card .btn.outline {
+    background: transparent;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    color: #0b1220;
+}
+
+.resource-card .btn.ghost {
+    background: transparent;
+    color: #0b1220;
+    border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-item select,
+    .filter-item input {
+        min-width: auto;
+        width: 100%;
+    }
+}

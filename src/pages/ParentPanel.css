@@ -1,0 +1,427 @@
+:root {
+    --parent-accent: #7c3aed;
+    /* purple */
+    --parent-surface: #0b1220;
+    --parent-text: #ffffff;
+}
+
+.parent-root {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    min-height: 100vh;
+    background: #f5f7fb
+}
+
+.parent-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: var(--parent-surface);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    color: var(--parent-text)
+}
+
+.parent-header .hamburger {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 8px
+}
+
+.parent-header .hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 3px 0
+}
+
+.parent-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--parent-text)
+}
+
+.header-spacer {
+    flex: 1
+}
+
+.btn-logout {
+    background: transparent;
+    color: var(--parent-text);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.parent-sidebar {
+    width: 220px;
+    position: fixed;
+    top: 56px;
+    bottom: 40px;
+    left: 0;
+    background: var(--parent-surface);
+    padding: 16px 12px;
+    color: rgba(255, 255, 255, 0.9)
+}
+
+.parent-sidebar .sidebar-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 6px 0
+}
+
+/* Active state for parent sidebar items */
+.parent-sidebar .sidebar-btn.active {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.parent-content {
+    margin-top: 56px;
+    margin-left: 220px;
+    margin-bottom: 40px;
+    padding: 18px
+}
+
+.parent-footer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--parent-surface);
+    color: var(--parent-text);
+    font-size: 13px
+}
+
+.parent-page {
+    padding: 12px
+}
+
+/* Messages form styling */
+.message-form-wrapper {
+    max-width: 820px;
+    margin: 18px auto;
+}
+
+.message-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.98));
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(11, 18, 32, 0.04);
+}
+
+.message-card h2 {
+    margin: 0 0 14px;
+    color: #0b1220;
+}
+
+.message-form label {
+    display: block;
+    margin-bottom: 12px;
+    color: rgba(11, 18, 32, 0.85);
+    font-weight: 600;
+}
+
+.message-form input[type="text"],
+.message-form textarea,
+.message-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    background: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #0b1220;
+    margin-top: 6px;
+}
+
+.message-form textarea {
+    min-height: 140px
+}
+
+.priority-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 6px
+}
+
+.priority-row label {
+    margin: 0;
+    font-weight: 700
+}
+
+.priority-chips {
+    display: flex;
+    gap: 8px
+}
+
+.prio-chip {
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid transparent
+}
+
+.prio-chip.high {
+    background: linear-gradient(90deg, #ffe4e6, #ffd6d6);
+    color: #7a1f1f
+}
+
+.prio-chip.medium {
+    background: linear-gradient(90deg, #fff8e6, #fff3d6);
+    color: #6b4a05
+}
+
+.prio-chip.low {
+    background: linear-gradient(90deg, #eaffef, #e6ffed);
+    color: #0b6f3a
+}
+
+.prio-chip.selected {
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+    border-color: rgba(11, 18, 32, 0.06)
+}
+
+.message-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--parent-accent), #5b21b6);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer
+}
+
+@media (max-width:700px) {
+    .message-card {
+        padding: 16px
+    }
+
+    .message-form-wrapper {
+        padding: 0 8px
+    }
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px
+}
+
+.stat-card {
+    display: flex;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #fff, #f6f7ff);
+    align-items: center
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: linear-gradient(90deg, var(--parent-accent), #5b21b6);
+    color: #fff;
+    border-radius: 10px
+}
+
+.stat-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0b1220
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0b1220
+}
+
+@media (max-width:640px) {
+    .parent-sidebar {
+        transform: translateX(-100%);
+        z-index: 60
+    }
+
+    .parent-sidebar.open {
+        transform: translateX(0)
+    }
+
+    .parent-content {
+        margin-left: 0
+    }
+}
+
+/* Hide the hamburger (small dash) on desktop to remove the left dashline; keep for mobile */
+@media (min-width: 640px) {
+    .parent-header .hamburger {
+        display: none;
+    }
+}
+
+/* Message list + history styles */
+.message-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.message-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 255, 0.98));
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 8px 28px rgba(2, 6, 23, 0.04);
+}
+
+.message-card.high {
+    border-left: 6px solid #ef4444;
+}
+
+.message-card.medium {
+    border-left: 6px solid #f59e0b;
+}
+
+.message-card.low {
+    border-left: 6px solid #10b981;
+}
+
+.complaint-history {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(11, 18, 32, 0.06);
+}
+
+.history-entry {
+    margin-top: 8px;
+    padding: 8px;
+    background: rgba(245, 247, 255, 0.6);
+    border-radius: 8px;
+}
+
+.history-meta {
+    font-size: 12px;
+    color: rgba(11, 18, 32, 0.65);
+    font-weight: 700;
+}
+
+.history-note {
+    margin-top: 6px;
+    color: rgba(11, 18, 32, 0.9);
+}
+
+.history-status {
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(11, 18, 32, 0.9);
+    font-weight: 800;
+}
+
+.muted {
+    color: rgba(11, 18, 32, 0.45);
+    padding: 10px 0
+}
+
+/* profile dropdown shared styles */
+.profile-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    padding: 6px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-btn img {
+    width: 28px;
+    height: 28px;
+    border-radius: 20px;
+    display: block
+}
+
+.profile-panel,
+.profile-dropdown {
+    background: #fff;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    top: 56px;
+    z-index: 60
+}
+
+.profile-item {
+    display: block;
+    padding: 10px 12px;
+    width: 200px;
+    text-align: left;
+    border: 0;
+    background: #fff;
+    color: #0b1220;
+    cursor: pointer;
+    font-weight: 700
+}
+
+.profile-item:hover {
+    background: #f3f4f6
+}
+
+.avatar-placeholder {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: var(--parent-accent);
+    color: #fff;
+    font-weight: 800
+}

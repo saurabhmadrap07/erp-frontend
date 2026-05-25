@@ -1,0 +1,1092 @@
+/* Admin panel layout and responsive styles */
+:root {
+    --sidebar-width: 280px;
+    --header-height: 56px;
+    --footer-height: 40px;
+    --bg: #f7f8fb;
+    --accent: #2b6cb0;
+    --surface-grey: #111827;
+    /* dark grey / near black */
+    --surface-border: rgba(255, 255, 255, 0.04);
+    --sidebar-item-color: #e6eef8;
+    /* light text for contrast */
+    --sidebar-item-hover: rgba(255, 255, 255, 0.06);
+}
+
+.admin-root {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.admin-header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: var(--surface-grey);
+    border-bottom: 1px solid var(--surface-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+}
+
+.hamburger {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--sidebar-item-color);
+    margin: 3px 0;
+}
+
+.admin-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 800;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+}
+
+/* remove any decorative line before the title if present */
+.admin-title::before {
+    display: none !important;
+}
+
+.header-spacer {
+    flex: 1
+}
+
+.btn-logout {
+    background: transparent;
+    color: var(--sidebar-item-color);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background .12s ease, transform .08s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-1px);
+
+}
+
+/* Profile dropdown in header */
+.profile-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--sidebar-item-color);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(var(--header-height) + 8px);
+    background: #ffffff;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 8px 28px rgba(2, 6, 23, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 200px;
+    z-index: 80;
+}
+
+.profile-btn {
+    background: #fff;
+    color: #0b1220;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    padding: 6px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Layout inside profile button: label + circular avatar ring */
+.profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 10px;
+}
+
+.profile-avatar-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(124, 58, 237, 0.9);
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar-placeholder {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #e6eef8;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.profile-item:hover {
+    background: #f3f4f6;
+}
+
+.profile-btn img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover
+}
+
+.profile-label {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Hide the hamburger icon on larger screens (desktop) to remove the small dashline. Keep it visible on small screens for mobile navigation. */
+@media (min-width: 640px) {
+    .admin-header .hamburger {
+        display: none;
+    }
+}
+
+.admin-sidebar {
+    width: var(--sidebar-width);
+    position: fixed;
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    left: 0;
+    background: var(--surface-grey);
+    border-right: 1px solid var(--surface-border);
+    padding: 16px 12px;
+    overflow: auto;
+    transition: transform .22s ease;
+    color: var(--sidebar-item-color);
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.admin-sidebar li {
+    margin: 8px 0
+}
+
+.admin-sidebar a {
+    color: var(--sidebar-item-color);
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+    border-radius: 8px;
+    margin: 6px 0;
+    background: transparent;
+    transition: background .12s ease, transform .08s ease;
+    font-weight: 600;
+    position: relative;
+    padding-left: 22px;
+}
+
+.admin-sidebar .sidebar-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: var(--sidebar-item-color);
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Prevent sidebar labels from wrapping; show ellipsis if too long */
+.admin-sidebar .sidebar-btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-sidebar .sidebar-btn:hover {
+    background: var(--sidebar-item-hover);
+    transform: translateY(-1px);
+}
+
+.admin-sidebar a:hover {
+    background: var(--sidebar-item-hover);
+    transform: translateY(-1px);
+}
+
+/* small colored accent bar for each sidebar item to create distinct button types */
+.admin-sidebar a::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 38px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.admin-sidebar li:nth-child(1) a::before {
+    background: linear-gradient(180deg, #7c3aed, #5b21b6);
+}
+
+.admin-sidebar li:nth-child(2) a::before {
+    background: linear-gradient(180deg, #06b6d4, #0ea5a4);
+}
+
+.admin-sidebar li:nth-child(3) a::before {
+    background: linear-gradient(180deg, #f59e0b, #fb923c);
+}
+
+.admin-sidebar li:nth-child(4) a::before {
+    background: linear-gradient(180deg, #10b981, #06b6d4);
+}
+
+.admin-sidebar li:nth-child(5) a::before {
+    background: linear-gradient(180deg, #ef4444, #f97316);
+}
+
+.admin-sidebar li:nth-child(6) a::before {
+    background: linear-gradient(180deg, #06b6d4, #60a5fa);
+}
+
+.admin-sidebar a:active {
+    transform: translateY(0);
+}
+
+.admin-sidebar a.active,
+.admin-sidebar a[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active state for button-based sidebar items */
+.admin-sidebar .sidebar-btn.active {
+    background: var(--sidebar-item-hover);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-close {
+    display: none;
+    margin-top: 12px
+}
+
+.admin-content {
+    margin-top: var(--header-height);
+    margin-left: var(--sidebar-width);
+    margin-bottom: var(--footer-height);
+    padding: 18px;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.admin-footer {
+    height: var(--footer-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--surface-grey);
+    border-top: 1px solid var(--surface-border);
+    color: var(--sidebar-item-color);
+    font-size: 13px;
+}
+
+/* MOBILE: target up to 320px width */
+/* MOBILE: responsive behavior for smaller screens
+   On small screens we change the sidebar from a left drawer
+   into a top-to-bottom dropdown that appears under the header.
+   We also add a content overlay when the menu is open. */
+@media (max-width:640px) {
+    :root {
+        --sidebar-width: 100%;
+    }
+
+    .admin-sidebar {
+        /* full width dropdown under the header */
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: calc(100vh - var(--header-height) - var(--footer-height));
+        width: 100%;
+        transform: translateY(-110%);
+        transition: transform .22s ease, opacity .15s ease;
+        box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
+        z-index: 70;
+        border-right: none;
+        border-left: none;
+        padding: 12px 10px;
+        overflow: auto;
+    }
+
+    .admin-sidebar.open {
+        transform: translateY(0);
+    }
+
+    .sidebar-close {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: transparent;
+        border: none;
+        color: var(--sidebar-item-color);
+        font-weight: 700;
+        padding: 6px 8px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .admin-content {
+        margin-left: 0;
+        padding: 12px;
+    }
+
+    .admin-header .admin-title {
+        font-size: 15px
+    }
+
+    /* overlay when sidebar/menu is open */
+    .admin-content.sidebar-open::before {
+        content: '';
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: var(--footer-height);
+        background: rgba(0, 0, 0, 0.32);
+        z-index: 65;
+    }
+}
+
+/* EXTRA: target very narrow phones (<=320px) and tighten spacing */
+@media (max-width:320px) {
+    :root {
+        --sidebar-width: 100%;
+        --header-height: 48px;
+        --footer-height: 40px;
+    }
+
+    .admin-header {
+        height: var(--header-height);
+        padding: 0 10px
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px
+    }
+
+    .admin-title {
+        font-size: 14px
+    }
+
+    .admin-sidebar {
+        padding: 10px 8px
+    }
+
+    .admin-sidebar ul {
+        gap: 4px
+    }
+
+    .admin-sidebar .sidebar-btn {
+        padding: 10px;
+        font-size: 14px
+    }
+
+    .admin-content {
+        padding: 10px
+    }
+
+    .dashboard-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px
+    }
+}
+
+/* Small screens: slightly reduce sidebar width */
+@media (max-width:640px) {
+    :root {
+        --sidebar-width: 200px
+    }
+}
+
+.admin-page h2 {
+    margin-top: 0
+}
+
+/* Make search card inputs and buttons visually boxed and bordered */
+.student-search-card input,
+.student-search-card select,
+.student-search-card textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    background: #ffffff;
+    box-shadow: none;
+    outline: none;
+}
+
+.student-search-card input:focus,
+.student-search-card select:focus,
+.student-search-card textarea:focus {
+    border-color: rgba(124, 58, 237, 0.9);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.06);
+}
+
+.student-search-card .btn-primary,
+.student-search-card .btn-secondary {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    background: linear-gradient(90deg, #fff, #fff);
+    color: #071132;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Styles for admin delete-requests table (colorful, bordered columns, searchable) */
+.delete-requests-search {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    min-width: 420px;
+    font-size: 14px;
+}
+
+.delete-requests-table {
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.delete-requests-table th,
+.delete-requests-table td {
+    padding: 10px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.delete-requests-table thead th {
+    color: #fff;
+    font-weight: 800;
+    padding: 12px 14px;
+}
+
+.delete-requests-table thead th:nth-child(1) {
+    background: linear-gradient(90deg, #7c3aed, #06b6d4);
+}
+
+.delete-requests-table thead th:nth-child(2) {
+    background: linear-gradient(90deg, #06b6d4, #60a5fa);
+}
+
+.delete-requests-table thead th:nth-child(3) {
+    background: linear-gradient(90deg, #f59e0b, #fb923c);
+}
+
+.delete-requests-table thead th:nth-child(4) {
+    background: linear-gradient(90deg, #10b981, #06b6d4);
+}
+
+.delete-requests-table thead th:nth-child(5) {
+    background: linear-gradient(90deg, #ef4444, #fb7185);
+}
+
+.delete-requests-table thead th:nth-child(6) {
+    background: linear-gradient(90deg, #9f7efe, #7c3aed);
+}
+
+.delete-requests-table thead th:nth-child(7) {
+    background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.delete-requests-table thead th:nth-child(8) {
+    background: linear-gradient(90deg, #06b6d4, #7c3aed);
+}
+
+.delete-requests-table thead th:nth-child(9) {
+    background: linear-gradient(90deg, #60a5fa, #06b6d4);
+}
+
+.delete-requests-table tbody tr:nth-child(odd) td {
+    background: linear-gradient(180deg, #ffffff, #fffaf6);
+}
+
+.delete-requests-table tbody tr:nth-child(even) td {
+    background: linear-gradient(180deg, #ffffff, #f5fbff);
+}
+
+.delete-requests-table tbody td {
+    vertical-align: middle;
+}
+
+.action-btn {
+    border: 2px solid #000;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+}
+
+.card>.delete-requests-search+.action-btn {
+    margin-left: 8px
+}
+
+.student-search-card .btn-primary:hover,
+.student-search-card .btn-secondary:hover {
+    transform: translateY(-1px);
+}
+
+/* Styles for Add Faculty modal (scoped) */
+.faculty-add-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.faculty-add-modal {
+    /* default: smaller, compact modal so content requires scrolling */
+    width: 360px;
+    max-width: 94%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.22);
+    background: #fff;
+    /* constrain vertical size and enable scrolling when needed */
+    max-height: 320px;
+}
+
+/* make modal layout a column so header stays fixed and body scrolls */
+.faculty-add-modal {
+    display: flex;
+    flex-direction: column;
+    transition: all 220ms ease;
+}
+
+/* Enlarged state when modal is opened: wider and taller */
+.faculty-add-modal.open {
+    width: 720px;
+    max-height: 80vh;
+}
+
+.faculty-add-header {
+    padding: 6px 8px;
+    background: linear-gradient(90deg, #7c3aed, #06b6d4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faculty-add-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.faculty-add-form {
+    padding: 8px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    overflow: auto;
+    /* enable internal scrolling when modal height is constrained */
+}
+
+/* make form area flexible and scrollable inside the modal */
+.faculty-add-form {
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.faculty-add-form label {
+    display: block;
+    font-weight: 600;
+    color: #0b1220;
+    font-size: 13px;
+}
+
+.faculty-add-form .boxed-input {
+    width: 100%;
+    padding: 7px 9px;
+    border-radius: 6px;
+    border: 1px solid rgba(11, 18, 32, 0.08);
+    background: #fff;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+/* Tighter button sizing inside modal */
+.faculty-add-form .btn-primary,
+.faculty-add-form .btn-secondary {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* Admin leaves colourful table and controls */
+.colorful-table thead th {
+    padding: 12px 14px;
+    background: linear-gradient(90deg, #fff7ed, #f0f9ff);
+    color: #0b1220;
+    font-weight: 800;
+}
+
+.colorful-table tbody td {
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #fff;
+}
+
+.colorful-table tr.approved td {
+    background: linear-gradient(90deg, #ecfdf5, #ffffff)
+}
+
+.colorful-table tr.rejected td {
+    background: linear-gradient(90deg, #fff1f2, #ffffff)
+}
+
+.admin-search {
+    padding: 10px 12px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    min-width: 280px;
+}
+
+.admin-btn {
+    border: 2px solid #000;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.admin-approve {
+    background: linear-gradient(90deg, #10b981, #059669);
+    color: #000;
+    margin-right: 8px
+}
+
+.admin-reject {
+    background: linear-gradient(90deg, #fb7185, #f43f5e);
+    color: #000
+}
+
+
+.faculty-add-form .boxed-input::placeholder {
+    color: rgba(11, 18, 32, 0.4);
+}
+
+.faculty-add-form .boxed-input:focus {
+    outline: none;
+    border-color: rgba(124, 58, 237, 0.9);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.06);
+}
+
+/* Compact action row for the modal */
+.faculty-add-modal .action-row {
+    padding: 6px 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    background: transparent;
+}
+
+/* Make the admin page itself darker and give the card area visual separation */
+.admin-page {
+    background: transparent;
+    padding: 18px 0;
+    border-radius: 0;
+    color: inherit;
+}
+
+/* Faculty table wrapper and bordered table styles */
+.faculty-table-wrap {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+    overflow-x: auto;
+}
+
+.faculty-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+}
+
+.faculty-table thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #06b6d4, #60a5fa);
+    border-top: 0;
+}
+
+.faculty-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    border-right: 1px solid #f5f7fb;
+    color: #0b1220;
+    vertical-align: middle;
+}
+
+.faculty-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.faculty-table tbody td:first-child,
+.faculty-table thead th:first-child {
+    padding-left: 14px;
+}
+
+.faculty-table tbody td:last-child,
+.faculty-table thead th:last-child {
+    padding-right: 14px;
+}
+
+.faculty-table tbody tr:hover td {
+    background: #fbfdff;
+}
+
+.faculty-table .btn-secondary,
+.faculty-table .btn-primary,
+.faculty-table .btn-danger {
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+/* For presentation: hide heading and placeholder paragraph so only cards show */
+.admin-page>h2,
+.admin-page>p {
+    display: none;
+}
+
+/* Dashboard small stat cards */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 14px 0 10px 0;
+    align-items: stretch;
+}
+
+/* keep the cards centered in the content area and limit their max width */
+.dashboard-cards {
+    max-width: 1200px;
+    margin: 18px auto 12px auto;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 22px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    color: var(--sidebar-item-color);
+    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45);
+    min-height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    color: #ffffff;
+    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.stat-body {
+    flex: 1
+}
+
+.stat-title {
+    font-size: 13px;
+    color: #0b1220;
+    /* dark for clear visibility on light card backgrounds */
+    font-weight: 800;
+}
+
+.stat-value {
+    font-size: 34px;
+    font-weight: 900;
+    margin-top: 6px;
+    color: #0b1220;
+    /* dark numbers */
+}
+
+/* Ensure inner content is fully opaque for visibility */
+.stat-card .stat-body,
+.stat-card .stat-icon {
+    opacity: 1 !important;
+}
+
+.stat-card.students {
+    background: linear-gradient(180deg, #eef8ff, #f0fbff);
+}
+
+.stat-card.students .stat-icon {
+    background: linear-gradient(90deg, #06b6d4, #0ea5a4)
+}
+
+.stat-card.teachers {
+    background: linear-gradient(180deg, #fbf7ff, #f7f0ff);
+}
+
+.stat-card.teachers .stat-icon {
+    background: linear-gradient(90deg, #7c3aed, #5b21b6)
+}
+
+.stat-card.classes {
+    background: linear-gradient(180deg, #fff7ed, #fff6f0);
+}
+
+.stat-card.classes .stat-icon {
+    background: linear-gradient(90deg, #f59e0b, #fb923c)
+}
+
+.stat-card.fees {
+    background: linear-gradient(180deg, #f0fff4, #f6fffb);
+}
+
+.stat-card.fees .stat-icon {
+    background: linear-gradient(90deg, #10b981, #06b6d4)
+}
+
+/* Compact single-line layout for faculty dashboard cards */
+.dashboard-cards.faculty-inline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 8px 0;
+    padding-bottom: 6px;
+    align-items: stretch;
+}
+
+.dashboard-cards.faculty-inline .stat-card {
+    padding: 14px 16px;
+    min-height: 84px;
+    gap: 12px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.18);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--sidebar-item-color);
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-cards.faculty-inline .stat-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+}
+
+.dashboard-cards.faculty-inline .stat-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0b1220;
+}
+
+.dashboard-cards.faculty-inline .stat-value {
+    font-size: 28px;
+    font-weight: 900;
+    margin-top: 6px;
+    color: #0b1220;
+}
+
+@media (max-width: 1000px) {
+
+    /* allow two columns on medium screens to keep cards readable */
+    .dashboard-cards.faculty-inline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    /* single column on narrow screens */
+    .dashboard-cards.faculty-inline {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1000px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width: 520px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Outlined button variant used for Block actions */
+.btn-outline {
+    background: transparent;
+    color: #111;
+    border: 1px solid #111;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Black bordered button for explicit actions like Edit/Block in faculty table */
+.btn-black {
+    background: transparent;
+    color: #000;
+    border: 1px solid #000;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-black:hover {
+    transform: translateY(-1px);
+}
+
+/* Generic admin table wrapper: allow both horizontal and vertical scrolling when content overflows */
+.admin-table-wrapper {
+    width: 100%;
+    max-height: 68vh;
+    overflow: auto;
+    /* show both scrollbars when needed */
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid rgba(11, 18, 32, 0.06);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+}
+
+.admin-table-wrapper table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Edit faculty modal/backdrop (used for editing an existing faculty inline) */
+.faculty-edit-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 220;
+}
+
+.faculty-edit-modal {
+    width: 820px;
+    max-width: 96%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(2, 6, 23, 0.28);
+    background: transparent;
+    /* keep overall container transparent so inner card can float */
+    display: flex;
+    align-items: stretch;
+}
+
+.faculty-edit-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 12px;
+}
+
+.faculty-edit-card .boxed-input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(11, 18, 32, 0.12);
+    background: #fff;
+}
+
+.faculty-edit-side {
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.faculty-edit-side h4 {
+    margin: 6px 0
+}
